@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Switch, Route, Link } from "react-router-dom"
+import NavLinkItem from './components/NavLinkItem'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
+import HomePage from './pages/HomePage'
+import ImageListPage from './pages/ImageListPage'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12">
+          <h1>
+            Fakestagram
+          </h1>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-md-12">
+          <ul className="nav">
+            <NavLinkItem to="/" text="Home"/>
+            <NavLinkItem to="/about" text="About"/>
+            <NavLinkItem to="/contact" text="Contact"/>
+          </ul>
+        </div>
+      </div>
+      <Switch>
+        <Route path="/">
+          <ImageListPage/>
+        </Route>
+        <Route path="/contact">
+          <ContactPage/>
+        </Route>
+        <Route path="/about">
+          <AboutPage/>
+        </Route>
+        <Route path="/">
+          <HomePage/>
+        </Route>
+      </Switch>
     </div>
   );
 }
