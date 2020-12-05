@@ -11,7 +11,6 @@ export default function ImageItem({imageItem}) {
         console.log(counter)
 
         setNewCounter(newCounter +1)
-
     }
    
     return (
@@ -26,7 +25,7 @@ export default function ImageItem({imageItem}) {
                   alt={imageItem.description}
               />
               <p>   
-                {newCounter} ♥️
+                {newCounter} <span onClick={handleOnClick}>♥️</span>
               </p>
               <p>
                 {imageItem.description}
