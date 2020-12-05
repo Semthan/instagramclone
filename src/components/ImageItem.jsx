@@ -17,9 +17,9 @@ export default function ImageItem({imageItem}) {
     return (
       <div class="container">
         <div className="row justify-content-md-center">
-          <div className="col-8 border mt-4">
+          <div className="col-8 border mt-4 ">
             <div className="container mt-2 mb-2 pl-0" >
-              <img className="img-fluid profile-img" src={imageItem.imageURL}></img>
+              <img className="profile-img" src={imageItem.imageURL}></img>
               <strong className="ml-1">{imageItem.id}</strong>
             </div>
             
@@ -47,10 +47,18 @@ export default function ImageItem({imageItem}) {
               <p>
                 {imageItem.description}
               </p>
-              <p>
-                  <Comments/>
-              </p>
+              <div className="row">
+                
+              </div>
           </div>
+        </div>
+        <div className="row justify-content-md-center border">
+          <Comments/>
+        </div>
+      </div>  
+    )
+}
+
             
 {/*         <p>
               Counter: {counter}
@@ -60,7 +68,3 @@ export default function ImageItem({imageItem}) {
             </p>
             <span onClick={handleOnClick}>♥️</span>
             */}
-        </div>
-      </div>  
-    )
-}
